@@ -1,0 +1,62 @@
+#LogoU{
+    height: 200px;
+    width: 250px;
+}
+#Titulo{
+    overflow: hidden;
+    margin-top: 50px;
+}
+@media screen and (max-width: 550px)  {
+    .hideIfSmall {
+        width:0;
+        font-size:0;
+    }
+    .CenterIfSmall{
+        margin-left: 100px;
+    }
+}
+#navbarNav{
+    margin-left: 100px;
+}
+#DepartamentosBar{
+    width: 18rem;
+}
+#SeleccionDepa{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+#Informaciones{
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+#H6{
+    color: gray;
+}
+.card{
+    margin-top: 50px;
+    margin-right: 30px;
+    width: 18rem;
+}
+.p{
+    text-overflow: ellipsis
+}
+@media screen and (min-width: 1400px)  {
+    #TitleBigger{
+        font-size:60px;
+    }
+    #H6{
+        font-size:40px;
+    }
+    #FontBigger{
+        font-size:35px;
+    }
+    #MakeBigger{
+        width:95%;
+    }
+    #LogoE{
+        height: 100px;
+        width: 100px;
+        float: right;
+    }
+}

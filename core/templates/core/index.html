@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content%}
+<div class="container-fluid" id="SeleccionDepa">
+    <form method="post">
+        {% csrf_token %}
+        <select class="form-select" name="Filtrar" aria-label="Default select example" id="DepartamentosBar">
+            <option value=""selected>No Filtro</option>
+            {% for Entidad in Entidades %}
+                <option value={{Entidad.id}}>{{Entidad.nombre}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+</div>
+<div class="container-fluid" id="Informaciones">
+    <div class="row">
+        {% for Comunicado in Comunicados %}
+            {% with logourl=Comunicado.entidad.logo %}
+                    <div class="card" id="MakeBigger">
+                        <div class="card-body">
+                            <h5 class="card-title" id="TitleBigger">{{ Comunicado.titulo }}</h5>
+                            <img src="{{ Comunicado.entidad.logo.url }}" class="d-none d-xxl-block" alt="Logo Departamento" id="LogoE">
+                            <h6 id="H6">{{ Comunicado.entidad }}</h6>
+                            <p class="card-text d-xxl-none">{{ Comunicado.detalle_corto }}</p>
+                            <p class="card-text d-none d-xxl-block" id="FontBigger">{{ Comunicado.detalle}}</p>
+                        </div>
+                    </div>
+            {% endwith%}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
